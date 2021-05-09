@@ -8,7 +8,7 @@ class Path(models.Model):
     Book = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     link = models.TextField(default="")
-    img = models.ImageField(default='default.jpg',upload_to='profile_pics')
+    img = models.ImageField(blank=True,upload_to='profile_pics')
 
     def __str__(self):
         return self.title
