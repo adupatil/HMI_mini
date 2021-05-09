@@ -59,7 +59,7 @@ class PostDetailView(DetailView):
     model = Path
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Path
-    fields = ['title','Book','link','img']
+    fields = ['title','Book','link']
 # for removing integrity error
     def form_valid(self,form):
         form.instance.Author = self.request.user
@@ -67,7 +67,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
      model = Path
-     fields = ['title','Book','link','img']
+     fields = ['title','Book','link']
 
      def form_valid(self,form):
         form.instance.Author = self.request.user
